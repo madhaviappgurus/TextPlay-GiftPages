@@ -128,7 +128,17 @@
 
         .giftbox-img {
             max-width: 300px;
+            width: 100%;
             height: auto;
+        }
+
+        .claim-gift video {
+            overflow: hidden;
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
     </style>
 </head>
@@ -165,7 +175,9 @@
     <section class="claim-gift bg-layer d-none">
         <div class="content">
             <div class="inner-layout">
-
+                <video poster="./images/video-poster.webp" controls autoplay loop playsinline>
+                    <source src="./images/g-video.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
         <div class="btn-wrap">
