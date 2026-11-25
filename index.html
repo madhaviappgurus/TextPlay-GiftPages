@@ -74,6 +74,20 @@
             border-radius: 50px;
         }
 
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 32px rgba(7, 233, 146, .65);
+        }
+
+        .btn:active {
+            transform: scale(.98);
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
         .inner-layout {
             flex-shrink: 0;
             flex-grow: 1;
@@ -140,12 +154,120 @@
             object-fit: cover;
             display: block;
         }
+
+        /* Download app */
+        .download-app .headline {
+            font-size: 26px;
+        }
+
+        .download-app .giftimg-wrap .giftbox-img {
+            max-width: 134px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 22px rgba(7, 233, 146, .55));
+        } 
+
+        .download-app .gift-card-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 10px 14px 10px 10px;
+            border-radius: 18px;
+            background: rgba(21, 27, 41, .50);
+            border: 1px solid #2b2b49;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            max-width: 420px;
+            width: 100%;
+            margin: 40px 0px;
+            vertical-align: middle;
+        }
+
+        .download-app .gift-card {
+            position: relative;
+            flex: 0 0 148px;
+            height: 104px;
+            border-radius: 12px;
+            padding: 12px 12px;
+            overflow: hidden;
+            background: linear-gradient(90deg, #FF9F43 0%, #FF5252 100%);
+            box-shadow: 0 8px 20px rgba(255, 79, 79, .35);
+            text-align: left;
+        }
+
+        .download-app .gift-card .amount {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1;
+            color: #14102a;
+        }
+
+        .download-app .gift-card .amount-label {
+            margin-top: 3px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #14102a;
+        }
+
+        .download-app .gift-card .brand-tag {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .download-app .gift-card .brand-tag .brand-tag-img {
+            width: 100%;
+            max-width: 120ox;
+            height: 14px;
+            object-fit: contain;
+            border-radius: 2px;
+        }
+
+        .download-app .gift-card .card-logo {
+            position: absolute;
+            right: 12px;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            opacity: .85;
+            top: 34px;
+        }
+
+        .download-app .gift-info {
+            min-width: 0;
+            text-align: left;
+        }
+
+        .download-app .gift-info .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .download-app .gift-info .type {
+            margin-top: 2px;
+            font-size: 12px;
+            color: var(--lightgrey);
+        }
+
+        .download-app .gift-info .from {
+            margin-top: 18px;
+            font-size: 13px;
+            color: var(--lightgrey);
+        }
+
+        .download-app .gift-info .from .dot {
+            margin: 0 4px;
+        }
     </style>
 </head>
 
 <body>
     <!-- ================= SCREEN 1 ================= -->
-    <section class="open-gift bg-layer">
+    <section class="open-gift bg-layer d-none">
         <div class="logo">
             <img src="./images/main-logo.svg" alt="main logo">
         </div>
@@ -189,6 +311,53 @@
     <section class="download-app bg-layer d-none">
         <div class="logo">
             <img src="./images/main-logo.svg" alt="main logo">
+        </div>
+        <div class="content">
+            <div class="inner-layout">
+                <div class="giftimg-wrap">
+                    <img src="./images/gift-box.png" alt="gift box" class="giftbox-img">
+                </div>
+                <h1 class="headline mb-0">Your gift is waiting!</h1>
+
+                <div class="gift-card-wrap">
+                    <div class="gift-card">
+                        <div class="amount">$50</div>
+                        <div class="amount-label">Amount</div>
+                        <div class="brand-tag">
+                            <img src="./images/amazone.svg" class="brand-tag-img">
+                        </div>
+                        <div class="card-img">
+                            <img src="./images/g-logo.svg" class="card-logo">
+                        </div>
+                    </div>
+        
+                    <div class="gift-info">
+                        <div class="value" id="giftValue">$100.00</div>
+                        <div class="type" id="giftType">Amazon Card</div>
+                        <div class="from">From <span id="giftFrom">Michael</span><span class="dot">·</span><span id="giftDate">Jun 12</span></div>
+                    </div>
+                </div>
+
+                <div class="middle-content">
+                    <p class="received m-0">Download TextPlay to claim your gift<br>
+                        and start creating your own moments.</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p class="expire m-0">This Gift card will expire in <span
+                        class="expire-time d-inline-block">48:00:00</span></p>
+            </div>
+        </div>
+        <div class="btn-wrap">
+            <a href="#claim-gift-page" class="btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 3v12" />
+                    <path d="M7 11l5 5 5-5" />
+                    <path d="M4 20h16" />
+                </svg>
+                Download TextPlay
+            </a>
         </div>
     </section>
 
