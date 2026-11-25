@@ -196,7 +196,7 @@
             vertical-align: middle; */
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* justify-content: center; */
             gap: 16px;
             padding: 10px 14px 10px 10px;
             border-radius: 18px;
@@ -205,11 +205,15 @@
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
             margin: 40px auto;
+            max-width: 500px;
+            width: 100%;
         }
 
         .download-app .gift-card {
             position: relative;
             flex: 0 0 148px;
+            max-width: 148px;
+            width: 100%;
             height: 104px;
             border-radius: 12px;
             padding: 12px 12px;
@@ -263,6 +267,10 @@
         .download-app .gift-info {
             min-width: 0;
             text-align: left;
+            /* display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px; */
         }
 
         .download-app .gift-info .value {
