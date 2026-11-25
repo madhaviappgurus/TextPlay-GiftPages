@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TextPlay Gift Page</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./font/supreme/stylesheet.css">
+
+    <style>
+        :root {
+            --green: #07E992;
+            --darktext: #050529;
+            --white: #ffffff;
+            --lightgrey: #C0C0C9;
+            --bg: #07101c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .d-none {
+            display: none !important;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            background: #000;
+            font-family: "Supreme", "Inter", sans-serif;
+            color: var(--white);
+        }
+
+        /* ---------- Shared screen shell (mobile first) ---------- */
+        section {
+            position: relative;
+            width: 100%;
+            max-width: 430px;
+            min-height: 100dvh;
+            margin: 0 auto;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding-top: 28px;
+        }
+
+        .logo img,
+        .logo svg {
+            height: 36px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        /* ---------- SCREEN 3: download app ---------- */
+        .download-app {
+            display: flex;
+            flex-direction: column;
+            padding: 0 22px 28px;
+            /*background:
+                linear-gradient(180deg, rgba(4, 10, 24, .78) 0%, rgba(4, 12, 26, .80) 55%, rgba(4, 14, 28, .86) 100%),
+                url("./images/bg.png") center / cover no-repeat,
+                radial-gradient(60% 30% at 0% 0%, #3b9aa8 0%, rgba(59, 154, 168, 0) 70%),
+                radial-gradient(70% 30% at 100% 25%, #e8f4fb 0%, rgba(232, 244, 251, 0) 70%),
+                radial-gradient(70% 30% at 20% 45%, #2fc98a 0%, rgba(47, 201, 138, 0) 70%),
+                linear-gradient(180deg, #ffffff 0%, #1f7a5e 55%, #1b2a3a 80%, #3f6f9f 100%);*/
+            background-image: url("./images/bg.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .download-app>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gift-box {
+            display: flex;
+            justify-content: center;
+            margin-top: 34px;
+        }
+
+        .gift-box img {
+            width: 134px;
+            height: auto;
+            filter: drop-shadow(0 0 22px rgba(7, 233, 146, .55));
+        }
+
+        .gift-title {
+            margin-top: 14px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--green);
+            text-shadow: 0 0 18px rgba(7, 233, 146, .45);
+        }
+
+        /* gift card row */
+        .gift-card-wrap {
+            margin-top: 26px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 10px 14px 10px 10px;
+            border-radius: 18px;
+            background: rgba(6, 18, 30, .72);
+            border: 1px solid rgba(255, 255, 255, .12);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .gift-card {
+            position: relative;
+            flex: 0 0 132px;
+            height: 104px;
+            border-radius: 12px;
+            padding: 12px 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff8a2a 0%, #ff4f4f 55%, #ff3d6e 100%);
+            box-shadow: 0 8px 20px rgba(255, 79, 79, .35);
+        }
+
+        .gift-card .amount {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1;
+            color: #14102a;
+        }
+
+        .gift-card .amount-label {
+            margin-top: 3px;
+            font-size: 11px;
+            font-weight: 500;
+            color: #14102a;
+        }
+
+        .gift-card .brand-tag {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            /*width: 54px;*/
+            /*height: 14px;*/
+            /*border-radius: 2px;*/
+            /*background: #0c0c14;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*font-size: 6px;*/
+            /*letter-spacing: .3px;*/
+            /*color: #fff;*/
+        }
+
+        .gift-card .brand-tag .brand-tag-img {
+            width: 50px;
+            height: 14px;
+            border-radius: 2px;
+            /*background: #0c0c14;*/
+        }
+
+        .gift-card .card-logo {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            opacity: .85;
+        }
+
+        .gift-info {
+            min-width: 0;
+        }
+
+        .gift-info .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .gift-info .type {
+            margin-top: 2px;
+            font-size: 13px;
+            color: var(--lightgrey);
+        }
+
+        .gift-info .from {
+            margin-top: 18px;
+            font-size: 12px;
+            color: var(--lightgrey);
+        }
+
+        .gift-info .from .dot {
+            margin: 0 4px;
+        }
+
+        .gift-message {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--white);
+            padding: 0 6px;
+        }
+
+        .spacer {
+            flex: 1;
+            min-height: 40px;
+        }
+
+        .expiry {
+            text-align: center;
+            font-size: 12px;
+            color: var(--lightgrey);
+        }
+
+        .expiry .time {
+            color: var(--green);
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .btn-download {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            height: 52px;
+            border: 0;
+            border-radius: 26px;
+            background: var(--green);
+            color: var(--darktext);
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 0 24px rgba(7, 233, 146, .45);
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 32px rgba(7, 233, 146, .65);
+        }
+
+        .btn-download:active {
+            transform: scale(.98);
+        }
+
+        .btn-download svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ================= SCREEN 1 ================= -->
+    <section class="open-gift d-none">
+        <div class="logo">
+            <img src="./images/main-logo.svg" alt="main logo">
+        </div>
+    </section>
+
+    <!-- ================= SCREEN 2 ================= -->
+    <section class="claim-gift d-none">
+
+    </section>
+
+    <!-- ================= SCREEN 3 ================= -->
+    <section class="download-app">
+        <div class="logo">
+            <!-- Replace this inline SVG with: <img src="./images/main-logo.svg" alt="main logo"> -->
+            <img src="./images/main-logo.svg">
+        </div>
+
+        <div class="gift-box">
+            <img src="./images/gift-box.png">
+        </div>
+
+        <h1 class="gift-title">Your gift is waiting!</h1>
+
+        <div class="gift-card-wrap">
+            <div class="gift-card">
+                <div class="amount">$50</div>
+                <div class="amount-label">Amount</div>
+                <div class="brand-tag">
+                    <img src="./images/amazone.svg" class="brand-tag-img">
+                </div>
+                <div class="card-img">
+                    <img src="./images/g-logo.svg" class="card-logo">
+                </div>
+            </div>
+
+            <div class="gift-info">
+                <div class="value" id="giftValue">$100.00</div>
+                <div class="type" id="giftType">Amazon Card</div>
+                <div class="from">From <span id="giftFrom">Michael</span><span class="dot">·</span><span id="giftDate">Jun 12</span></div>
+            </div>
+        </div>
+
+        <p class="gift-message">
+            Download TextPlay to claim your gift<br>
+            and start creating your own moments.
+        </p>
+
+        <div class="spacer"></div>
+
+        <p class="expiry">This Gift card will expire in <span class="time" id="countdown">48:00:00</span></p>
+
+        <a href="#" class="btn-download" id="downloadBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12" />
+                <path d="M7 11l5 5 5-5" />
+                <path d="M4 20h16" />
+            </svg>
+            Download TextPlay
+        </a>
+    </section>
+
+    <!-- <script>
+        // ---- Countdown (starts at 48 hours; replace `expiresAt` with your real expiry timestamp) ----
+        const expiresAt = Date.now() + 48 * 60 * 60 * 1000;
+        const countdownEl = document.getElementById("countdown");
+        const pad = (n) => String(n).padStart(2, "0");
+
+        function tick() {
+            const diff = Math.max(0, expiresAt - Date.now());
+            const h = Math.floor(diff / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            countdownEl.textContent = `${pad(h)}:${pad(m)}:${pad(s)}`;
+        }
+        tick();
+        setInterval(tick, 1000);
+
+        // ---- Download button: send users to the right store ----
+        document.getElementById("downloadBtn").addEventListener("click", function (e) {
+            e.preventDefault();
+            const ua = navigator.userAgent || "";
+            const IOS_URL = "https://apps.apple.com/";       // TODO: your App Store link
+            const ANDROID_URL = "https://play.google.com/";  // TODO: your Play Store link
+            window.location.href = /iPhone|iPad|iPod/i.test(ua) ? IOS_URL : ANDROID_URL;
+        });
+
+        // ---- Screen switching helper (for your 3-screen flow) ----
+        function showScreen(name) {
+            document.querySelectorAll("section").forEach((s) => s.classList.add("d-none"));
+            document.querySelector("." + name).classList.remove("d-none");
+        }
+        // Example: showScreen("open-gift"); showScreen("claim-gift"); showScreen("download-app");
+    </script> -->
+</body>
+
+</html>
