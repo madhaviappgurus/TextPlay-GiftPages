@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>TextPlay Gift Page</title>
 
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./font/supreme/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="./font/supreme/stylesheet.css">
 
     <style>
         :root {
@@ -17,6 +17,7 @@
             --darktext: #050529;
             --white: #ffffff;
             --lightgrey: #C0C0C9;
+            --bgdark: #030917;
         }
 
         * {
@@ -24,24 +25,149 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        body {
+            font-family: "Supreme", sans-serif;
+            background: var(--bgdark);
+            overflow-x: hidden;
+        }
+
+        .bg-layer {
+            background-image: url(./images/Bg.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            min-height: 100dvh;
+            padding: 30px 16px 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .content {
+            flex-shrink: 0;
+            flex-grow: 1;
+            margin: 30px 0 14px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.1;
+            background-color: var(--green);
+            color: var(--darktext);
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            border: transparent;
+            padding: 16px 20px;
+            border-radius: 50px;
+        }
+
+        .inner-layout {
+            flex-shrink: 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo img {
+            max-width: 172px;
+        }
+
+        .footer {
+            margin-top: 55px;
+        }
+
+        .expire {
+            font-size: 13px;
+            color: var(--lightgrey);
+            font-weight: 300;
+        }
+
+        .expire .expire-time {
+            font-weight: 500;
+            color: var(--green);
+        }
+
+        .received {
+            font-size: 18px;
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .received .from {
+            color: var(--green);
+        }
+
+        .headline {
+            font-size: 33px;
+            font-weight: 500;
+            color: var(--green);
+            line-height: 1.1;
+        }
+
+        .open-gift .headline {
+            padding-top: 8px;
+        }
+
+        .giftimg-wrap {
+            padding: 30px 0 24px;
+        }
+
+        .giftbox-img {
+            max-width: 300px;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
     <!-- ================= SCREEN 1 ================= -->
-    <section class="open-gift">
+    <section class="open-gift bg-layer">
         <div class="logo">
             <img src="./images/main-logo.svg" alt="main logo">
+        </div>
+        <div class="content">
+            <div class="inner-layout">
+                <h1 class="headline mb-0">A little something,<br>just for you.</h1>
+                <div class="giftimg-wrap">
+                    <img src="./images/gift-box.png" alt="gift box" class="giftbox-img">
+                </div>
+
+                <div class="middle-content">
+                    <p class="received m-0">You've Received a special gift<br><span class="from">From Michael</span></p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p class="expire m-0">This Gift card will expire in <span
+                        class="expire-time d-inline-block">48:00:00</span></p>
+            </div>
+        </div>
+        <div class="btn-wrap">
+            <a href="#claim-gift-page" class="btn">Open my Gift</a>
         </div>
     </section>
 
     <!-- ================= SCREEN 2 ================= -->
-    <section class="claim-gift d-none">
-      
+    <section class="claim-gift bg-layer d-none" id="claim-gift-page">
+
     </section>
 
     <!-- ================= SCREEN 3 ================= -->
-    <section class="download-app d-none">
+    <section class="download-app bg-layer d-none" id="download-app-page">
         <div class="logo">
             <img src="./images/main-logo.svg" alt="main logo">
         </div>
