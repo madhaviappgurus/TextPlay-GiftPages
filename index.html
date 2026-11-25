@@ -157,21 +157,46 @@
             </div>
         </div>
         <div class="btn-wrap">
-            <a href="#claim-gift-page" class="btn">Open my Gift</a>
+            <a href="#" class="btn">Open my Gift</a>
         </div>
     </section>
 
     <!-- ================= SCREEN 2 ================= -->
-    <section class="claim-gift bg-layer d-none" id="claim-gift-page">
+    <section class="claim-gift bg-layer d-none">
+        <div class="content">
+            <div class="inner-layout">
 
+            </div>
+        </div>
+        <div class="btn-wrap">
+            <a href="#" class="btn">Claim my Gift</a>
+        </div>
     </section>
 
     <!-- ================= SCREEN 3 ================= -->
-    <section class="download-app bg-layer d-none" id="download-app-page">
+    <section class="download-app bg-layer d-none">
         <div class="logo">
             <img src="./images/main-logo.svg" alt="main logo">
         </div>
     </section>
+
+    <script>
+        const screens = document.querySelectorAll('section.bg-layer');
+
+        screens.forEach((screen, index) => {
+            const btn = screen.querySelector('.btn-wrap a.btn');
+            const nextScreen = screens[index + 1];
+
+            if (btn && nextScreen) {
+                btn.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    screen.classList.add('d-none');
+                    nextScreen.classList.remove('d-none');
+                    window.scrollTo(0, 0);
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
