@@ -72,20 +72,24 @@
             border: transparent;
             padding: 16px 20px;
             border-radius: 50px;
+            transition: all 0.4s ease;
         }
 
-        .btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 0 32px rgba(7, 233, 146, .65);
+        .btn:hover,
+        .btn:focus-visible,
+        .btn:active {
+            transform: translateY(-1px) !important;
+            box-shadow: 0 0 32px rgba(7, 233, 146, .65) !important;
+            background-color: var(--green) !important;
         }
 
         .btn:active {
-            transform: scale(.98);
+            transform: scale(.98) !important;
         }
 
         .btn svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
         }
 
         .inner-layout {
@@ -174,7 +178,7 @@
             width: 100%;
             height: auto;
             filter: drop-shadow(0 0 22px rgba(7, 233, 146, .55));
-        } 
+        }
 
         .download-app .gift-card-wrap {
             /* display: flex;
@@ -200,7 +204,7 @@
             border: 1px solid #2b2b49;
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
-            margin: 40px auto;  
+            margin: 40px auto;
         }
 
         .download-app .gift-card {
@@ -284,6 +288,14 @@
         .download-app .gift-info .from .dot {
             margin: 0 4px;
         }
+
+        .download-app .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            line-height: 1.2;
+        }
     </style>
 </head>
 
@@ -356,11 +368,12 @@
                             <img src="./images/g-logo.svg" class="card-logo">
                         </div>
                     </div>
-        
+
                     <div class="gift-info">
                         <div class="value" id="giftValue">$100.00</div>
                         <div class="type" id="giftType">Amazon Card</div>
-                        <div class="from">From <span id="giftFrom">Michael</span><span class="dot">·</span><span id="giftDate">Jun 12</span></div>
+                        <div class="from">From <span id="giftFrom">Michael</span><span class="dot">·</span><span
+                                id="giftDate">Jun 12</span></div>
                     </div>
                 </div>
 
@@ -376,12 +389,16 @@
             </div>
         </div>
         <div class="btn-wrap">
-            <a href="#claim-gift-page" class="btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M12 3v12" />
-                    <path d="M7 11l5 5 5-5" />
-                    <path d="M4 20h16" />
+            <a href="#" class="btn">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6.63884 13.275C7.95685 14.593 10.0938 14.593 11.4118 13.275L11.4119 13.275L13.8209 10.866C14.2678 10.4343 14.2802 9.72215 13.8485 9.27524C13.4169 8.82833 12.7047 8.81596 12.2578 9.24761C12.2484 9.25664 12.2392 9.26589 12.2301 9.27524L10.1429 11.3617L10.1256 1.125C10.1256 0.503684 9.62192 0 9.0006 0C8.37928 0 7.8756 0.503684 7.8756 1.125L7.89135 11.3452L5.82061 9.2745C5.37371 8.84285 4.66151 8.85523 4.22986 9.30213C3.8088 9.7381 3.8088 10.4293 4.22986 10.8652L6.63884 13.275Z"
+                        fill="#050529" />
+                    <path
+                        d="M16.875 10.8751C16.2537 10.8751 15.75 11.3788 15.75 12.0001V15.4434C15.7496 15.6126 15.6125 15.7497 15.4433 15.7501H2.55674C2.3875 15.7497 2.25039 15.6126 2.25 15.4434V12.0001C2.25 11.3788 1.74632 10.8751 1.125 10.8751C0.503684 10.8751 0 11.3788 0 12.0001V15.4434C0.00165234 16.8548 1.14539 17.9985 2.55674 18.0002H15.4432C16.8546 17.9985 17.9983 16.8548 18 15.4434V12.0002C18 11.3788 17.4963 10.8751 16.875 10.8751Z"
+                        fill="#050529" />
                 </svg>
+
                 Download TextPlay
             </a>
         </div>
